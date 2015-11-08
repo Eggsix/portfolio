@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng:app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/">
+	<title>Preston Phan</title>
+	<!--CSS-->
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<!--Angular-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
+	<script src="/javascripts/scripts.js"></script>
+	<!--Factory-->
+	<script src="/javascripts/factories/weatherFactory.js"></script>
+	<script src="/javascripts/factories/userFactory.js"></script>
+	<!--Controller-->
+	<script src="/javascripts/controllers/weatherController.js"></script>
+	<script src="/javascripts/controllers/userController.js"></script>
+
+</head>
+<body ng:controller="userController as usrCtrl">
+
+	<nav>
+		<h1>Preston Le Phan</h1>
+		<ul id="links">
+			<li><a href="/preston_phan">About Me</a></li>
+			<li><a href="/experience">Professional Experience</a></li>
+			<li><a href="/contact">Contact</a></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/login">Login</a></li>
+		</ul>
+	</nav>
+
+	<header id="header" >
+		<img id="profile_img" src="images/prestonphan.jpg" alt="Preston Phan">
+		<div id="weather" ng:controller="weatherController as weatherCtrl">
+			<h2 ng:bind="weatherCtrl.city"></h2>
+			<h2 ng:bind="weatherCtrl.condition"></h2>
+			<h2><span ng:bind="weatherCtrl.fehrenheit"></span><span>&#8457;</span></h2>
+		</div>
+	</header>
+
+	<div id="view" ng:view></div>
+
+	
+
+</body>
+</html>
