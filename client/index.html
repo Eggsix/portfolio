@@ -16,9 +16,11 @@
 	<!--Factory-->
 	<script src="/javascripts/factories/weatherFactory.js"></script>
 	<script src="/javascripts/factories/userFactory.js"></script>
+	<script src="/javascripts/factories/blogFactory.js"></script>
 	<!--Controller-->
 	<script src="/javascripts/controllers/weatherController.js"></script>
 	<script src="/javascripts/controllers/userController.js"></script>
+	<script src="/javascripts/controllers/blogController.js"></script>
 
 </head>
 <body ng:controller="userController as usrCtrl">
@@ -30,18 +32,12 @@
 			<li><a href="/experience">Professional Experience</a></li>
 			<li><a href="/contact">Contact</a></li>
 			<li><a href="/blog">Blog</a></li>
-			<li><a href="/login">Login</a></li>
+			<li>
+				<button ng:if="!usrCtrl.currentUser._id"><a href="/login">Login</a></button>
+				<button  ng:click="usrCtrl.logOff()" ng:if="usrCtrl.currentUser._id">Log off</button>
+			</li>
 		</ul>
 	</nav>
-
-	<header id="header" >
-		<img id="profile_img" src="images/prestonphan.jpg" alt="Preston Phan">
-		<div id="weather" ng:controller="weatherController as weatherCtrl">
-			<h2 ng:bind="weatherCtrl.city"></h2>
-			<h2 ng:bind="weatherCtrl.condition"></h2>
-			<h2><span ng:bind="weatherCtrl.fehrenheit"></span><span>&#8457;</span></h2>
-		</div>
-	</header>
 
 	<div id="view" ng:view></div>
 

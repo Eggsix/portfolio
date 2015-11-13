@@ -1,4 +1,11 @@
-
+<header id="header" >
+	<img id="profile_img" src="images/prestonphan.jpg" alt="Preston Phan">
+	<div id="weather" ng:controller="weatherController as weatherCtrl">
+		<h2 ng:bind="weatherCtrl.city"></h2>
+		<h2 ng:bind="weatherCtrl.condition"></h2>
+		<h2><span ng:bind="weatherCtrl.fehrenheit"></span><span>&#8457;</span></h2>
+	</div>
+</header>
 <h1>About Me</h1>
 <h2>Who is Preston anyway?</h2>
 <p>

@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
 
 // if mongoose, require mongoose
-//require('./server/config/mongoose.js');
+require('./server/config/mongoose.js');
 
 //routes
 require('./server/config/routes.js')(app);

@@ -6,7 +6,10 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
-    "mongoose": "^4.2.4"
+    "mongoose": "^4.2.4",
+    "mongoose-unique-validator": "^0.6.1",
+    "validator": "^4.2.1",
+    "validator.js": "^1.2.3"
   },
   "devDependencies": {},
   "scripts": {

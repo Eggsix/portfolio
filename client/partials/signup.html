@@ -1,0 +1,36 @@
+<div id="newUser">
+	<form name="signup">
+
+		<label>Email:</label>
+		<input class="form-control"type="email" name="email" ng:model="usrCtrl.newUser.email" placeholder="Email" required>
+		<small class="error" ng:bind="usrCtrl.unique.error"></small>
+
+		<div ng-show="signup.email.$dirty && signup.email.$invalid">
+	      <small class="error" ng-show="signup.email.$error.required"> Your email is required.</small>
+	      <small class="error" ng-show="signup.email.$error.email"> That is not a valid email. Please input a valid email.</small>
+	    </div>
+		
+
+		<label>Username:</label>
+		<input class="form-control" name="username" type="text" ng:model="usrCtrl.newUser.username"  placeholder="Username" required>
+
+		<div class="error" ng-show="signup.username.$dirty && signup.username.$invalid">
+		    <small class="error" ng-show="signup.username.$error.required"> Your name is required. </small>
+		</div>
+		
+		<label>Password:</label>	
+		<input class="form-control"name="password" type="password" ng:minlength = 8 placeholder="Password" ng:model="usrCtrl.newUser.password" required>
+		
+		<div ng-show="signup.password.$dirty && signup.password.$invalid">
+			<small class="error" ng:show="signup.password.$error.required">password is required</small>
+			<small class="error" ng:show="signup.password.$error.minlength">password needs to be at least 8 characters</small>
+		</div>
+		
+		<label>Confirm Password:</label>
+		<input class="form-control" type="password" match-password="password" ng:model="usrCtrl.newUser.confirm" placeholder="Confirm Password" required>
+		<small class="error" ng:bind="usrCtrl.confirm.error"></small>
+
+		<button ng:click="usrCtrl.addUser()">Sign Up</button>
+
+	</form>	
+</div>

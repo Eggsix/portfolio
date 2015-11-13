@@ -1,0 +1,18 @@
+<div id="blog" ng:controller="blogController as blogCtrl">
+	<h1>Blog</h1>
+	<div id="admin_blog" ng:if="usrCtrl.currentUser.admin">
+		<form>
+
+			<label>Title</label>
+			<input  class="form-control" ng:model="blogCtrl.newPost.title" type="text" placeholder="Title" required>
+
+			<label>Content</label>
+			<textarea class="form-control" ng:model="blogCtrl.newPost.content" cols="30" rows="10"></textarea>
+
+			<button ng:click="blogCtrl.addPost(usrCtrl.currentUser)">Post</button>
+		</form>	
+		
+	</div>
+
+
+</div>

@@ -1,9 +1,17 @@
+/*******************
+Classes
+*******************/
 .error {
 	color: red;
 }
 
+/*******************
+Navigation
+*******************/
 nav {
 	color: white;
+	background-color: black;
+	padding-left: 10%;
 }
 	nav h1 {
 		display: inline-block;
@@ -16,14 +24,21 @@ nav {
 	#links, li {
 		display: inline-block;
 	}
+
+/*******************
+Index
+*******************/
 body {   
 	background: url("http://cdn.twitrcovers.com/wp-content/uploads/2012/09/Grass.jpg");
 	background-size: cover;
 	background-position: center bottom;
 	background-attachment: fixed;
 	background-repeat: no-repeat; 
-    padding-left: 10%;
 }
+
+/*******************
+About Me
+*******************/
 #profile_img {
 	height: 15%;
 	min-height: 10%;
@@ -39,16 +54,25 @@ body {
 	color: white;
 	display: inline-block;
 }
-#view {
+/*******************
+Blog
+*******************/
+#admin_blog {
+	width: 400px;
 	background-color: white;
-	opacity: .8;
-}
-#login {
-	background-color: #2ecc71;
+	margin: 0 auto;
+	padding: 10px;
 	border-radius: 3px;
-	padding: 5px;
 }
-	#user, #newUser {
-		display: inline-block;
-		vertical-align: top;
-	}
+
+
+/*******************
+Login
+*******************/
+#login, #newUser {
+	background-color: #2ecc71;
+	width: 400px;
+	margin: 0 auto;
+	border-radius: 3px;
+	padding: 10px;
+}

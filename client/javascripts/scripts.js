@@ -26,6 +26,11 @@ var myApp = angular.module("myApp", ['ngRoute']);
 			// controllerAs: /* controller name */,
 			templateUrl: '../partials/login.html'
 		})
+		.when("/sign_up", {
+			// controller: /* partial controller */,
+			// controllerAs: /* controller name */,
+			templateUrl: '../partials/signup.html'
+		})
 		.otherwise({
 			redirectTo: "/preston_phan"
 		});

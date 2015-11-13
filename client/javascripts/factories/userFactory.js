@@ -3,7 +3,12 @@ myApp.factory('userFactory', function ($http) {
 	return {
 		addUser: function (newUser, callback) {
 			$http.post('/new_user', newUser).then(function (data) {
-				console.log(data);
+				callback(data);
+			})
+		},
+		findUser: function (logUser, callback) {
+			$http.get('/log_in/' + logUser).then(function (data) {
+				callback(data.data);
 			})
 		}
 	}
