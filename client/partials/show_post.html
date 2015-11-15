@@ -1,0 +1,19 @@
+<button ng:click="blogCtrl.deletePost(blogCtrl.currentPost._id)" ng:if="usrCtrl.currentUser.admin">Delete</button>
+<div id="blog_post">
+	<h1 ng:bind="blogCtrl.currentPost.title"></h1>
+	<p ng:bind="blogCtrl.currentPost.createdAt | date:'MMM, dd yyyy h:mma '"></p>
+	<p ng:bind="blogCtrl.currentPost.content"></p>
+	<form ng:if="usrCtrl.currentUser">
+		<label>Comment:</label>
+		<textarea  class="form-control" ng:model="blogCtrl.newComment.comment"  cols="30" rows="10" required></textarea>
+		<button ng:click="blogCtrl.addComment(usrCtrl.currentUser, blogCtrl.currentPost._id)">Add Comment</button>
+	</form>
+	<div id="blog_comments">
+		<ul  ng:repeat="comments in blogCtrl.currentPost.comments | orderBy: '-createdAt'">
+			<li>
+				<p><span ng:bind="comments.username"></span>: <span ng:bind="comments.comment"></span></p>
+				<p ng:bind="comments.createdAt | date:'MMM, dd yyyy h:mma' "></p>
+			</li>
+		</ul>
+	</div>
+</div>
