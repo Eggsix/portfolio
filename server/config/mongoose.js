@@ -1,10 +1,9 @@
 var mongoose = require('mongoose');
 var fs = require('fs');
-var env = 'development';
 if (env === 'development') {
 	mongoose.connect('mongodb://localhost/portfolio');
 } else {
-	mongoose.connect('mongodb://Eggsix:Eggs6767@ds053954.mongolab.com:53954/eggsix');
+	mongoose.connect('mongodb://eggsix:Eggs6767@ds053954.mongolab.com:53954/eggsix');
 }
 
 
