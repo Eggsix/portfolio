@@ -4,7 +4,7 @@ var fs = require('fs');
 // if (env === 'development') {
 // 	mongoose.connect('mongodb://localhost/portfolio');
 // } else {
-	mongoose.connect('mongodb://eggsix:Eggs6767@ds053954.mongolab.com:53954/eggsix');
+	mongoose.connect('mongodb://eggsix:Eggs6767@ds053794.mongolab.com:53794/heroku_37d17gls');
 // }
 
 
