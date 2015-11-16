@@ -40,12 +40,12 @@ myApp.controller('blogController', function(blogFactory, $location) {
 	this.addPost = function (userData) {
 		if(userData.admin) {
 			blogFactory.newPost(that.newPost, function (data) {
+				getAllPosts()
 				//Allow Success messages here 
 			})
 		} else {
 			return false
 		}
-		getAllPosts()
 		that.newPost = ""
 	}
 
