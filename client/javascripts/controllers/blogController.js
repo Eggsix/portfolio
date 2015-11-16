@@ -5,6 +5,7 @@ myApp.controller('blogController', function(blogFactory, $location) {
 	showPostData = function (data) {
 		blogFactory.showPost(data, function(data) {
 			that.currentPost = data
+			console.log(that.currentPost)
 		})
 	}
 
@@ -13,8 +14,8 @@ myApp.controller('blogController', function(blogFactory, $location) {
 		blogFactory.getAllPosts(function (data) {
 			var data = data.reverse()
 				dataArr = [];
-				for( var i = 0; i < data.length; i + 5) {
-					dataArr.push(data.splice(i, i + 5))
+				for( var i = 0; i < data.length; i + 3) {
+					dataArr.push(data.splice(i, i + 3))
 				}
 			that.allPosts = dataArr
 		})
@@ -56,6 +57,11 @@ myApp.controller('blogController', function(blogFactory, $location) {
 		blogFactory.addComment(commentData, post_id, function(data) {
 			//asycronously updates comments in current post
 			showPostData(post_id)
-		})	
+		})
+		that.newComment = ""	
+	}
+	this.deleteComment = function (comment_id, post_id) {
+		blogFactory.deleteComment(comment_id, post_id)
+		showPostData(post_id)
 	}
 })

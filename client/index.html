@@ -24,21 +24,19 @@
 
 </head>
 <body ng:controller="userController as usrCtrl">
-
-	<nav>
-		<h1>Preston Le Phan</h1>
-		<ul id="links">
-			<li><a href="/preston_phan">About Me</a></li>
-			<li><a href="/experience">Professional Experience</a></li>
-			<li><a href="/contact">Contact</a></li>
-			<li><a href="/blog">Blog</a></li>
-			<li>
-				<button ng:if="!usrCtrl.currentUser._id"><a href="/login">Login</a></button>
-				<button  ng:click="usrCtrl.logOff()" ng:if="usrCtrl.currentUser._id">Log off</button>
-			</li>
-		</ul>
-	</nav>
 	<div ng:controller="blogController as blogCtrl">
+		<div id="navigation">
+			<img id="profile_img" src="images/prestonphan.jpg" alt="Preston Phan">
+			<ul id="links">
+				<li><a href="/preston_phan">About Me</a></li>
+				<li><a href="/experience">Professional Experience</a></li>
+				<li><a href="/blog">Blog</a></li>
+				<li>
+					<button ng:if="!usrCtrl.currentUser._id"><a href="/login">Login</a></button>
+					<button  ng:click="usrCtrl.logOff()" ng:if="usrCtrl.currentUser._id">Log off</button>
+				</li>
+			</ul>
+		</div>
 		<div id="view" ng:view></div>
 	</div>
 	

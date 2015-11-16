@@ -24,6 +24,9 @@ myApp.factory('blogFactory', function($http) {
 			$http.post('/new_comment/' + post_id, comment).then(function (data) {
 				callback(data.data)
 			})
+		},
+		deleteComment: function (comment_id, post_id) {
+			$http.delete('/remove_comment/'+post_id +"/"+comment_id)
 		}
 	}
 })

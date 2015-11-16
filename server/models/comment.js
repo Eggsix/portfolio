@@ -5,6 +5,6 @@ var mongoose = require('mongoose'),
 		user_id: String,
 		username: String,
 		comment: {type:String, required: true},
-		createdAt: {type: Date, default: new Date}
+		createdAt: {type: Date, default: Date.now}
 	})
 	Comment = mongoose.model('Comment', CommentSchema)

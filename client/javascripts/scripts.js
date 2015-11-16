@@ -7,20 +7,17 @@ var myApp = angular.module("myApp", ['ngRoute']);
 		.when("/experience", {
 			templateUrl: '../partials/experience.html'
 		})
-		.when("/contact", {
-			templateUrl: '../partials/contact.html'
-		})
 		.when("/blog", {
-			templateUrl: '../partials/blog.html'
+			templateUrl: '../partials/blog/blog.html'
 		})
 		.when("/login", {
-			templateUrl: '../partials/login.html'
+			templateUrl: '../partials/login/login.html'
 		})
 		.when("/sign_up", {
-			templateUrl: '../partials/signup.html'
+			templateUrl: '../partials/login/signup.html'
 		})
 		.when("/post", {
-			templateUrl: '../partials/show_post.html'
+			templateUrl: '../partials/blog/show_post.html'
 		})
 		.otherwise({
 			redirectTo: "/preston_phan"
