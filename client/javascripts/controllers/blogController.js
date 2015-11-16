@@ -5,7 +5,6 @@ myApp.controller('blogController', function(blogFactory, $location) {
 	showPostData = function (data) {
 		blogFactory.showPost(data, function(data) {
 			that.currentPost = data
-			console.log(that.currentPost)
 		})
 	}
 

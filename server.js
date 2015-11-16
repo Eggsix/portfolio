@@ -1,6 +1,5 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
 
@@ -15,7 +14,6 @@ require('./server/config/mongoose.js');
 require('./server/config/routes.js')(app);
 
 var port = process.env.PORT || 8000;
-
 app.listen(port, function() {
   console.log('Node app is running on port ' + port + "...");
 });
