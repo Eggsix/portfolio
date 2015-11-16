@@ -2,10 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-
-
-// app.set('port', (process.env.PORT || 8000));
-// if using body-parser
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/client'));
