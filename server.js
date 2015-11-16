@@ -2,6 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
+var env = process.env.NODE_ENV  = process.env.NODE_ENV || 'development';
+
 app.set('port', (process.env.PORT || 8000));
 // if using body-parser
 app.use(bodyParser.json());
