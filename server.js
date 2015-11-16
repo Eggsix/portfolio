@@ -13,6 +13,6 @@ require('./server/config/mongoose.js');
 //routes
 require('./server/config/routes.js')(app);
 
-app.listen(8000, function () {
+app.listen('https://preston-phan.herokuapp.com/', function () {
 	console.log('listening on port 8000');
 })
