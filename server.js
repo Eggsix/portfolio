@@ -2,9 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-var env = process.env.NODE_ENV  = process.env.NODE_ENV || 'development';
 
-app.set('port', (process.env.PORT || 8000));
+
+// app.set('port', (process.env.PORT || 8000));
 // if using body-parser
 app.use(bodyParser.json());
 
@@ -17,6 +17,6 @@ require('./server/config/mongoose.js');
 require('./server/config/routes.js')(app);
 
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+app.listen(8000, function() {
+  console.log('Node app is running on port 8000');
 });
