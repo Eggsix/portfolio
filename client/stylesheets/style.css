@@ -61,11 +61,12 @@ body {
 #view {
 	position: fixed;
 	top: 0px;
-	left: 40%;
+	left: 37%;
 	display: inline-block;
 	background-color: rgba(227, 255, 244, .9);
 	width: 60%;
 	height: 100vh;
+	overflow: scroll;
 }
 /*******************
 About Me
