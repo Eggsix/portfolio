@@ -4,8 +4,8 @@ var myApp = angular.module("myApp", ['ngRoute']);
 		.when("/preston_phan", {
 			templateUrl: '../partials/preston_phan.html'
 		})
-		.when("/experience", {
-			templateUrl: '../partials/experience.html'
+		.when("/lab", {
+			templateUrl: '../partials/lab.html'
 		})
 		.when("/blog", {
 			templateUrl: '../partials/blog/blog.html'

@@ -12,21 +12,18 @@
     "validator.js": "^1.2.3"
   },
   "scripts": {
-    "start": "NODE_ENV=production node ./server"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "engines": {
     "node": "4.1.x",
-    "npm" : "2.14.x"
+    "npm": "2.14.x"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Eggsix/portfolio.git"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
   "author": "Preston Phan",
   "license": "ISC"
 }

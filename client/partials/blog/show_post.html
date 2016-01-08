@@ -1,7 +1,7 @@
 <div id="blog_post">
 	<h1 ng:bind="blogCtrl.currentPost.title"></h1>
 	<p ng:bind="blogCtrl.currentPost.createdAt | date:'MMM, dd yyyy h:mma '"></p>
-	<pre ng:bind="blogCtrl.currentPost.content"></pre>
+	<p class="pre" ng:bind="blogCtrl.currentPost.content"></p>
 	<button ng:click="blogCtrl.deletePost(blogCtrl.currentPost._id)" ng:if="usrCtrl.currentUser.admin">Delete</button>
 	<form ng:if="usrCtrl.currentUser._id">
 		<label>Comment:</label>

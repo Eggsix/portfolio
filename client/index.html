@@ -24,18 +24,28 @@
 
 </head>
 <body ng:controller="userController as usrCtrl">
-	<button ng:if="!usrCtrl.currentUser._id"><a href="/login">Login</a></button>
-	<button  ng:click="usrCtrl.logOff()" ng:if="usrCtrl.currentUser._id">Log off</button>
-	<div ng:controller="blogController as blogCtrl">
-		<div id="navigation">
-			<img id="profile_img" src="images/prestonphan.jpg" alt="Preston Phan">
-			<ul id="links">
-				<li><a href="/preston_phan">About Me</a></li>
-				<li><a href="/experience">Professional Experience</a></li>
-				<li><a href="/blog">Articles</a></li>
-			</ul>
-		</div>
-		<div id="view" ng:view></div>
-	</div>
+	
+		<table class="index_table">
+			<tbody>
+			<tr>
+				<td id="navigation"> 
+						<button ng:if="!usrCtrl.currentUser._id"><a href="/login">Login</a></button>
+						<button  ng:click="usrCtrl.logOff()" ng:if="usrCtrl.currentUser._id">Log off</button>
+						<img id="profile_img" src="images/prestonphan.jpg" alt="Preston Phan">
+						<ul id="links">
+							<li><a href="/preston_phan">About Me</a></li>
+							<li><a href="/lab">Lab</a></li>
+							<li><a href="/blog">Articles</a></li>
+						</ul>
+				</td>
+				<td id="index_table_view">
+					<div ng:controller="blogController as blogCtrl">
+						<div id="view" ng:view></div>
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	
 </body>
 </html>
