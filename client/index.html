@@ -5,18 +5,28 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<base href="/">
 	<title>Preston Phan</title>
+
 	<!--CSS-->
 	<link rel="stylesheet" href="/stylesheets/style.css">
-	<!--Bootstrap-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<!-- JQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="/javascripts/jquery.js"></script>
+	<!-- Materialize -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+ 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+
 	<!--Angular-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
 	<script src="/javascripts/scripts.js"></script>
+
 	<!--Factory-->
 	<script src="/javascripts/factories/weatherFactory.js"></script>
 	<script src="/javascripts/factories/userFactory.js"></script>
 	<script src="/javascripts/factories/blogFactory.js"></script>
+
 	<!--Controller-->
 	<script src="/javascripts/controllers/weatherController.js"></script>
 	<script src="/javascripts/controllers/userController.js"></script>
@@ -24,19 +34,30 @@
 
 </head>
 <body ng:controller="userController as usrCtrl">
-	
+	<nav id="nav">
+	    <div class="nav-wrapper" >
+	      <a href="#!" class="brand-logo">Preston Phan</a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+	      <ul class="right hide-on-med-and-down">
+	        <li><a href="/preston_phan">About Me</a></li>
+	        <li><a href="/lab">Lab</a></li>
+	        <li><a href="/blog">Articles</a></li>
+	      </ul>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="/preston_phan">About Me</a></li>
+	        <li><a href="/lab">Lab</a></li>
+	        <li><a href="/blog">Articles</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+	<div>
 		<table class="index_table">
 			<tbody>
 			<tr>
 				<td id="navigation"> 
-						<button ng:if="!usrCtrl.currentUser._id"><a href="/login">Login</a></button>
-						<button  ng:click="usrCtrl.logOff()" ng:if="usrCtrl.currentUser._id">Log off</button>
-						<img id="profile_img" src="images/prestonphan.jpg" alt="Preston Phan">
-						<ul id="links">
-							<li><a href="/preston_phan">About Me</a></li>
-							<li><a href="/lab">Lab</a></li>
-							<li><a href="/blog">Articles</a></li>
-						</ul>
+	<!-- 						<button ng:if="!usrCtrl.currentUser._id"><a href="/login">Login</a></button>
+						<button  ng:click="usrCtrl.logOff()" ng:if="usrCtrl.currentUser._id">Log off</button> -->
+						<img id="profile_img" class="center" src="images/prestonphan.jpg" alt="Preston Phan">
 				</td>
 				<td id="index_table_view">
 					<div ng:controller="blogController as blogCtrl">
@@ -46,6 +67,6 @@
 			</tr>
 			</tbody>
 		</table>
-	
+	</div>
 </body>
 </html>

@@ -19,4 +19,6 @@ module.exports = function (app) {
 	.get('/post/:id', function (req, res) { comment.show(req,res) })
 	//delete comment
 	.delete('/remove_comment/:id/:comment_id', function(req, res) { comment.delete(req, res) })
+
+
 }

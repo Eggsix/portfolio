@@ -2,28 +2,42 @@
 /*******************
 Classes
 *******************/
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .error {
 	color: red;
 }
-.header {
+
+.header_layout {
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
-	text-align: center;
+	height: 100%;
+	width: 100%;
 }
 .pre {
 	white-space: pre;
+	word-wrap: break-word;
 }
 
 /*******************
 Index
 *******************/
+#nav {
+	background-color: rgba(0, 0, 0, 0);
+	padding: 0px 40px 0px 40px;
+}
 body {   
-	background: url("http://cdn.twitrcovers.com/wp-content/uploads/2012/09/Grass.jpg");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0%, 
+		                              rgba(0, 0, 0, 0.6) 100%),url("/images/space_needle.jpg");
 	background-size: cover;
 	background-position: center bottom;
 	background-attachment: fixed;
 	background-repeat: no-repeat; 
 }
+
 .index_table {
 	width: 100%;
 	height: 100%;
@@ -36,26 +50,28 @@ body {
 #navigation {
 	width: 35%;
 	height: 100%;
+	padding: 0px;
 }
 #index_table_view {
 	width: 65%;
+	padding: 0px;
 }
-
-#links li {
-	display: inline-block;
-	height: 50px;
-	width: 100px;
-	border: 2px solid white;
-	border-radius: 5px;
-	text-align: center;
-	vertical-align: top;
-}
-#links a {
-	text-decoration: none;
-	display: block;
-	height: 100%;
-	width: 100%;
-}
+	#links td {
+		height: 50px;
+		width: 100px;
+		border: 2px solid white;
+		border-radius: 5px;
+		text-align: center;
+		vertical-align: top;
+		display: inline-block;
+		margin-right: 3px;
+	}
+	#links a {
+		text-decoration: none;
+		display: block;
+		height: 100%;
+		width: 100%;
+	}
 	#links a:hover {
 		background-color: rgba(255, 255, 255, .4);
 	}
@@ -66,15 +82,13 @@ body {
 	margin-bottom: 30px;
 	margin-left: 95px;
 	height: 200px;
-	min-height: 10%;
 	width: 200px;
-	min-width: 10%;
 	border-radius: 50%;
 	border: 5px solid #2ecc71;
 	margin-top: 15px;
-	text
 }
 #view {
+	padding: 10px;
 	display: inline-block;
 	background-color: rgba(227, 255, 244, .9);
 	width: 100%;
@@ -84,11 +98,6 @@ body {
 /*******************
 About Me
 *******************/
-#about {
-	padding: 10px;
-	height: 100%;
-	width: 100%;
-}
 
 /*#weather {
 	color: white;
@@ -103,11 +112,6 @@ Blog
 	margin: 0 auto;
 	padding: 10px;
 	border-radius: 3px;
-}
-#blog {
-	width: 100%;
-	height: 100%;
-	padding: 15px;
 }
 	#blog ul {
 		margin-left: 5%;
