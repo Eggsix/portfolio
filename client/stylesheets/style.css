@@ -130,8 +130,9 @@ Home
 }
 #slogan {
 	background-image: url('/images/crane.png');
-	background-size: 100vh;
+	background-size: 100%;
 	background-color: #FF542B;
+	background-repeat: no-repeat;
 }
 /*******************
 About Me

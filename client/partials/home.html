@@ -10,11 +10,9 @@
     </tr>
     <tr>
       <td id="weather">
-        <div  ng:controller="weatherController as weatherCtrl">
-          <h1 ng:bind="weatherCtrl.city"></h1>
-          <h1 ng:bind="weatherCtrl.condition"></h1>
-          <h1><span ng:bind="weatherCtrl.fehrenheit"></span><span>&deg;F</span></h1>
-        </div>
+          <h1 id="weather_city"></h1>
+          <h1 id="weather_condition"></h1>
+          <h1><span id="ferhenheit"></span>&deg;F</h1>
       </td>
       <td>
         <div id="slider">
