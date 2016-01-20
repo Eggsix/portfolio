@@ -1,12 +1,13 @@
 $(document).ready(function() {
-	$.get("http://api.openweathermap.org/data/2.5/weather?q=Seattle,us&appid=717fbf698bb2dd90997c882680d12571", function(res) {
-		var temp = res.main.temp,
-			weather_city = res.name,
-			weather_condition = res.weather[0].description,
-			ferhenheit = Math.floor(temp * 9/5 - 459.67);
-			document.getElementById("weather_city").innerHTML = weather_city;
-			document.getElementById("weather_condition").innerHTML = weather_condition;
-			document.getElementById("ferhenheit").innerHTML = ferhenheit;
+	$.get("https://api.forecast.io/forecast/313c7749b3c1c818025f4832af02f021/47.6097,-122.3331", function(res) {
+		console.log(res);
+		// var temp = res.main.temp,
+		// 	weather_city = res.name,
+		// 	weather_condition = res.weather[0].description,
+		// 	ferhenheit = Math.floor(temp * 9/5 - 459.67);
+		// 	document.getElementById("weather_city").innerHTML = weather_city;
+		// 	document.getElementById("weather_condition").innerHTML = weather_condition;
+		// 	document.getElementById("ferhenheit").innerHTML = ferhenheit;
 	});
 	//slider
 	var width = 600;
