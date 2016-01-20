@@ -4,6 +4,8 @@
   "description": "Personal Profile",
   "main": "server.js",
   "dependencies": {
+    "angular-material": "^1.0.1",
+    "angular-materialize": "^0.1.2",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "mongoose": "^4.2.4",

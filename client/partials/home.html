@@ -1,0 +1,37 @@
+<table id="home_display">
+  <tbody>
+    <tr>
+      <td>
+        <img id="profile_img" class="center" src="images/prestonphan.jpg" alt="Preston Phan">
+      </td>
+      <td id="slogan">
+        <h1>Web Architect</h1>
+      </td>
+    </tr>
+    <tr>
+      <td id="weather">
+        <div  ng:controller="weatherController as weatherCtrl">
+          <h1 ng:bind="weatherCtrl.city"></h1>
+          <h1 ng:bind="weatherCtrl.condition"></h1>
+          <h1><span ng:bind="weatherCtrl.fehrenheit"></span><span>&deg;F</span></h1>
+        </div>
+      </td>
+      <td>
+        <div id="slider">
+          <ul class="slides">
+            <li class="slide" style="background-image: url('/images/wooden_bench.jpg');"></li>
+            <li class="slide" style="background-image: url('/images/parking.jpg');"></li>
+            <li class="slide" style="background-image: url('/images/bike.jpg');"></li>
+            <li class="slide" style="background-image: url('/images/thank_you.jpg');"></li>
+            <li class="slide" style="background-image: url('/images/gray_water.jpg');"></li>
+            <li class="slide" style="background-image: url('/images/motel.jpg');"></li>
+            <li class="slide" style="background-image: url('/images/one_way.jpg');"></li>
+            <li class="slide" style="background-image: url('/images/wooden_bench.jpg');"></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

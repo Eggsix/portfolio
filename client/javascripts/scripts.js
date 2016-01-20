@@ -1,6 +1,9 @@
 var myApp = angular.module("myApp", ['ngRoute']);
 	myApp.config(function ($routeProvider, $locationProvider) {
 		$routeProvider
+		.when("/", {
+			templateUrl: '../partials/home.html'
+		})
 		.when("/preston_phan", {
 			templateUrl: '../partials/preston_phan.html'
 		})
@@ -20,7 +23,7 @@ var myApp = angular.module("myApp", ['ngRoute']);
 			templateUrl: '../partials/blog/show_post.html'
 		})
 		.otherwise({
-			redirectTo: "/preston_phan"
+			redirectTo: "/"
 		});
 		$locationProvider.html5Mode(true);
 	});

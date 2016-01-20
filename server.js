@@ -6,7 +6,7 @@ var app = express();
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/client'));
-
+app.use('/node_modules', express.static(__dirname + '/node_modules'));
 // if mongoose, require mongoose
 require('./server/config/mongoose.js');
 
