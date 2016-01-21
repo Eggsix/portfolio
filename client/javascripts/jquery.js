@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	
 	//slider
 	var width = 600;
 	var animationSpeed = 1000;
