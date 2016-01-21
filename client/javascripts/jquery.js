@@ -1,12 +1,11 @@
 $(document).ready(function() {
+	
+	//slider
 	var width = 600;
 	var animationSpeed = 1000;
 	var pause = 5000;
 	var currentSlide = 1;
-	
 	var interval;
-	//set interval
-
 	function startSlider(){
 		interval = setInterval(function () {
 			var slider = $('#slider');
@@ -29,15 +28,6 @@ $(document).ready(function() {
 
 	startSlider();
 
-	$('#slider').on('mouseenter', pauseSlider).on('mouseleave', startSlider);
-		//animate margin-left
-		//if it's last slide, go to position 1 (0px);
-
-
-		//listen for mouseenter and pause
-		
-		//resume on mouseleave
-
-	//materialize nave bar collapse
+	//materialize side nav
 	$(".button-collapse").sideNav();
 });

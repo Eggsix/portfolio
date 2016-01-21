@@ -10,13 +10,8 @@ myApp.controller('blogController', function(blogFactory, $location) {
 
 	//retrieve all posts from database
 	getAllPosts = function () {
-		blogFactory.getAllPosts(function (data) {
-			var data = data.reverse()
-				dataArr = [];
-				for( var i = 0; i < data.length; i + 3) {
-					dataArr.push(data.splice(i, i + 3))
-				}
-			that.allPosts = dataArr
+		blogFactory.getAllPosts(function (data) {			
+			that.allPosts = data.reverse();
 		})
 	}
 	getAllPosts()

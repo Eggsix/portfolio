@@ -21,13 +21,27 @@
 	</div>
 
 	<div>
-		<ul ng:repeat="posts in blogCtrl.allPosts">
-			<li ng:repeat="post in posts">
-				<a href="/post" ng:click="blogCtrl.showPost(post._id)">
-					<h3 ng:bind="post.title"></h3>
-					<p ng:bind="post.preview"></p>
-					<p ng:bind="post.createdAt | date:'MMM, dd yyyy'"></p>
-				</a>
+		<ul >
+			<li ng:repeat="post in blogCtrl.allPosts">
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<div id="date_circle">
+									<p ng:bind="post.createdAt | date:'MMM'"></p>
+									<p ng:bind="post.createdAt | date:'dd'"></p>
+									<p ng:bind="post.createdAt | date:'yyyy'"></p>
+								</div>
+							</td>
+							<td>
+								<a href="/post" ng:click="blogCtrl.showPost(post._id)">
+									<h3 ng:bind="post.title"></h3>
+									<p ng:bind="post.preview"></p>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>				
 			</li>
 		</ul>
 	</div>
