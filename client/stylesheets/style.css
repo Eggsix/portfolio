@@ -49,9 +49,11 @@ Classes
 }
 
 .header_layout {
+	text-align: right;
 	font-family: sullivan;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	padding-right: 100px;
 	height: 100%;
 	width: 100%;
 }
@@ -104,7 +106,6 @@ body {
 	display: inline-block;
 	width: 100%;
 	height: 100vh;
-	overflow: scroll;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.3),0 2px 10px 0 rgba(0,0,0,0.2);
 }
 /*******************
@@ -144,7 +145,32 @@ Home
 	background-repeat: no-repeat;
 	background-color: #4B6A7F;
 }
-
+/*******************
+About Me
+*******************/
+.info {
+	width: 800px;
+	color: black;
+	background-color: #FFE7E3;
+	border-radius: 10px;
+	padding: 10px;
+	display: block;
+	margin: 0 auto;
+}
+/*******************
+Login
+*******************/
+.projects table {
+	width: 80%;
+	height: 100%;
+}
+	.projects img {
+		width: 500px;
+		height: 250px;
+	}
+	.projects td {
+		font-family: homestead;
+	}
 /*******************
 Blog
 *******************/
@@ -170,12 +196,12 @@ Blog
 		margin: 0;
 	}
 	#blog td:first-child {
-		width: 30%;
+		width: 25%;
 		background-color: #FFB000;
 	}
 	#blog td {
 		border-radius: 0px;
-		width: 70%;
+		width: 75%;
 		background-color: #D9D9D9;
 	}
 	#blog table {
@@ -183,7 +209,7 @@ Blog
 	}
 	#blog li{
 		font-family: homestead;
-		height: 200px;
+		height: 175px;
 		width: 100%;
 	}
 	#blog a {
@@ -192,15 +218,6 @@ Blog
 		width: 100%;
 		height: 100%;
 	}
-#blog_post {
-	padding: 10px;
-	width: 100vh;
-	height: 100vh;
-}
-#blog_comments {
-	height: 350px;
-	overflow: scroll;
-}
 	#blog_comments li {
 		list-style: none;
 		border-top: 1px solid white;

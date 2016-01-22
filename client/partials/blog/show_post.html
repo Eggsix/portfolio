@@ -1,20 +1,22 @@
 <div id="blog_post">
-	<h1 ng:bind="blogCtrl.currentPost.title"></h1>
-	<p ng:bind="blogCtrl.currentPost.createdAt | date:'MMM, dd yyyy h:mma '"></p>
-	<p class="pre" ng:bind="blogCtrl.currentPost.content"></p>
-	<button ng:click="blogCtrl.deletePost(blogCtrl.currentPost._id)" ng:if="usrCtrl.currentUser.admin">Delete</button>
-	<form ng:if="usrCtrl.currentUser._id">
-		<label>Comment:</label>
-		<textarea  class="form-control" ng:model="blogCtrl.newComment.comment"  cols="10" rows="3" required></textarea>
-		<button ng:click="blogCtrl.addComment(usrCtrl.currentUser, blogCtrl.currentPost._id)">Add Comment</button>
-	</form>
-	<div id="blog_comments">
-		<ul  ng:repeat="comments in blogCtrl.currentPost.comments | orderBy: '-createdAt'">
-			<li>
-				<p><span ng:bind="comments.username"></span>: <span ng:bind="comments.comment"></span></p>
-				<p ng:bind="comments.createdAt | date:'MMM, dd yyyy h:mma' "></p>
-				<button ng:if="comments.user_id == usrCtrl.currentUser._id" ng:click="blogCtrl.deleteComment(comments._id, blogCtrl.currentPost._id)">Delete</button>
-			</li>
-		</ul>
+	<h1 class="header_layout" ng:bind="blogCtrl.currentPost.title"></h1>
+	<div class="info">
+		<p ng:bind="blogCtrl.currentPost.createdAt | date:'MMM, dd yyyy h:mma '"></p>
+		<p class="pre" ng:bind="blogCtrl.currentPost.content"></p>
+		<button ng:click="blogCtrl.deletePost(blogCtrl.currentPost._id)" ng:if="usrCtrl.currentUser.admin">Delete</button>
+		<form ng:if="usrCtrl.currentUser._id">
+			<label>Comment:</label>
+			<textarea  class="form-control" ng:model="blogCtrl.newComment.comment"  cols="10" rows="3" required></textarea>
+			<button ng:click="blogCtrl.addComment(usrCtrl.currentUser, blogCtrl.currentPost._id)">Add Comment</button>
+		</form>
+		<div id="blog_comments">
+			<ul  ng:repeat="comments in blogCtrl.currentPost.comments | orderBy: '-createdAt'">
+				<li>
+					<p><span ng:bind="comments.username"></span>: <span ng:bind="comments.comment"></span></p>
+					<p ng:bind="comments.createdAt | date:'MMM, dd yyyy h:mma' "></p>
+					<button ng:if="comments.user_id == usrCtrl.currentUser._id" ng:click="blogCtrl.deleteComment(comments._id, blogCtrl.currentPost._id)">Delete</button>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
