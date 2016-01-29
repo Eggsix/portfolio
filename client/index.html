@@ -9,9 +9,14 @@
 
 	<!--CSS-->
 	<link rel="stylesheet" href="/stylesheets/style.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+	<!-- Socket.io -->
+	<script src="/socket.io/socket.io.js"></script>	
 
 	<!-- JQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script src="/javascripts/jquery.js"></script>
 
 	<!-- Materialize -->
@@ -46,6 +51,7 @@
 	        <li><a href="/preston_phan">About Me</a></li>
 	        <li><a href="/lab">Lab</a></li>
 	        <li><a href="/blog">Articles</a></li>
+	        <li id="chat_button" onclick="open_chat();"><a href="#">chat</a></li>
 	      </ul>
 	      <ul class="side-nav" id="mobile-demo">
 	      	<li><a href="/">Home</a></li>
@@ -59,6 +65,13 @@
 	<div ng:controller="blogController as blogCtrl">
 		<div id="view" ng:view></div>
 	</div>
-	
+	<div id="userlist"></div>
+	<div id="chat_box">
+		<div id="chatlog"></div>
+		<form id="chat_form">
+			<input type="text" id="message" name="message" autocomplete="off">
+			<button type="submit" class="waves-effect waves-light btn">Submit</button>
+		</form>	
+	</div>
 </body>
 </html>

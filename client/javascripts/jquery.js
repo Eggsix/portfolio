@@ -1,5 +1,61 @@
 $(document).ready(function() {
-	//slider
+	//Chat
+
+	var elem = document.getElementById('chatlog');
+	var socket = io.connect();
+	var userName = '';
+	$('#chat_box').hide();
+	$('#chat_box').draggable();
+	open_chat = function () {
+		while(userName.length <= 0 || userName == null) {
+					userName = prompt("what is your name?");	
+		} 
+		if(userName.length > 0) {
+			socket.emit('got_new_user', {name: userName});	
+		}
+
+		$('#chat_box').effect('slide', 500, function() {
+			$(this).fadeIn();
+
+		$('#chat_button').attr("onclick", "close_chat()");
+
+		elem.scrollTop = elem.scrollHeight;
+
+		});
+	}
+
+	$('#chat_form').submit(function (event) {
+		event.preventDefault();
+		$message = $('#message').val();
+		socket.emit('user_message', $message);
+		$('#message').val('');
+	})
+
+	socket.on('show_messages', function (data) {
+		$('#chatlog').append('<p>' + data[data.length-1] + '</p>');
+		elem.scrollTop = elem.scrollHeight;
+	})
+
+	socket.on('show_all_messages', function (data) {
+		for(messages in data) {
+			$('#chatlog').append('<p>' + data[messages] + '</p>')
+		}
+	})
+
+	socket.on('show_all_users', function (data) {
+		console.log(data);
+		for(user in data) {
+			$('#userlist').append('<p>' + data[user] + '</p>');
+		}
+	})
+	socket.on('remove_user', function () {
+		$('#userlist').empty();
+	})
+	close_chat = function () {
+		$('#chat_box').fadeOut(500);
+		$('#chat_button').attr("onclick", "open_chat()");
+	}
+	//Slider
 	var width = 600;
 	var animationSpeed = 1000;
 	var pause = 5000;
@@ -26,6 +82,7 @@ $(document).ready(function() {
 	}
 
 	startSlider();
+	//End Slider
 
 	//materialize side nav
 	$(".button-collapse").sideNav();
