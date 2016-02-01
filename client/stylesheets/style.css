@@ -239,16 +239,22 @@ Chat feature
 #chatlog {
 	height: 300px;
 	width: 300px;
-	border: 1px solid red;
-	overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 #chat_box {
+	padding: 24px;
+	color: white;
+	background-image: url('/images/chalk_board.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
 	position: fixed;
 	right:0;
 	bottom: 0;
 	z-index: 2;
 	height: 400px;
 	width: 300px;
-	background-color: white;
-	border: 2px solid yellow;
+}
+#chat_box input {
+	height: 2rem;
 }

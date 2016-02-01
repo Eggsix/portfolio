@@ -1,6 +1,11 @@
 $(document).ready(function() {
 	//Chat
-
+	$('.chat_form input').keypress(function(event) {
+		if (event.which == 13) {
+			event.preventDefault();
+			$('.chat_form').submit();
+		}
+	})
 	var elem = document.getElementById('chatlog');
 	var socket = io.connect();
 	var userName = '';
