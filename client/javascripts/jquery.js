@@ -1,16 +1,23 @@
 $(document).ready(function() {
 	//Chat
+	var elem = document.getElementById('chatlog');
+	var socket = io.connect();
+	var userName = '';
+	var color = "#"+((1<<24)*Math.random()|0).toString(16);
+
+	//no submit button
 	$('.chat_form input').keypress(function(event) {
 		if (event.which == 13) {
 			event.preventDefault();
 			$('.chat_form').submit();
 		}
 	})
-	var elem = document.getElementById('chatlog');
-	var socket = io.connect();
-	var userName = '';
+	// hide chat box
 	$('#chat_box').hide();
+	// draggable chat box
 	$('#chat_box').draggable();
+
+	//access user chat
 	open_chat = function () {
 		while(userName.length <= 0 || userName == null) {
 					userName = prompt("what is your name?");	
@@ -29,6 +36,12 @@ $(document).ready(function() {
 		});
 	}
 
+	// close user chat
+	close_chat = function () {
+		$('#chat_box').fadeOut(500);
+		$('#chat_button').attr("onclick", "open_chat()");
+	}
+
 	$('#chat_form').submit(function (event) {
 		event.preventDefault();
 		$message = $('#message').val();
@@ -37,29 +50,27 @@ $(document).ready(function() {
 	})
 
 	socket.on('show_messages', function (data) {
-		$('#chatlog').append('<p>' + data[data.length-1] + '</p>');
+		console.log(data)
+		$('#chatlog').append('<p><span>' + data[data.length-1].name + ':</span> ' + data[data.length-1].message + '</p>');
 		elem.scrollTop = elem.scrollHeight;
 	})
 
 	socket.on('show_all_messages', function (data) {
 		for(messages in data) {
-			$('#chatlog').append('<p>' + data[messages] + '</p>')
+			$('#chatlog').append('<p><span>' + data[messages].name + ':</span> ' + data[messages].message + '</p>')
 		}
 	})
 
 	socket.on('show_all_users', function (data) {
-		console.log(data);
 		for(user in data) {
 			$('#userlist').append('<p>' + data[user] + '</p>');
 		}
 	})
+
 	socket.on('remove_user', function () {
 		$('#userlist').empty();
 	})
-	close_chat = function () {
-		$('#chat_box').fadeOut(500);
-		$('#chat_button').attr("onclick", "open_chat()");
-	}
+
 	//Slider
 	var width = 600;
 	var animationSpeed = 1000;

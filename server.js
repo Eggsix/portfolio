@@ -2,7 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/client'));
@@ -30,7 +29,7 @@ io.sockets.on('connection', function (socket) {
 	//adds new user
 	socket.on('got_new_user', function (data) {	
 		user[socket.id] =  data.name;
-		messages.push(user[socket.id] + ' has entered the chatroom!');
+		messages.push({name: user[socket.id], message: ' has entered the chatroom!'});
 		io.emit('show_messages', messages);
 		io.emit('remove_user');		
 		io.emit('show_all_users', user);
@@ -38,14 +37,14 @@ io.sockets.on('connection', function (socket) {
 
 	//show user message
 	socket.on('user_message', function (data) {
-		messages.push(user[socket.id] + ' ' + data);
+		messages.push( {name: user[socket.id], message: data});
 		io.emit('show_messages', messages);
 	})
 
 	//user has left the chatroom
 	socket.on('disconnect', function() {
 		if (user[socket.id]) {
-			messages.push(user[socket.id] + ' has left the chatroom!');
+			messages.push({name: user[socket.id], message: ' has left the chatroom!'});
 			delete user[socket.id];
 			io.emit('show_messages', messages);
 			io.emit('remove_user');
