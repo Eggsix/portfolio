@@ -17,6 +17,7 @@ var server = app.listen(port, function() {
   console.log('Node app is running on port ' + port + "...");
 });
 
+
 var user = {};
 var messages = []; 
 var io = require('socket.io').listen(server);

@@ -22,6 +22,7 @@ $(document).ready(function() {
 		while(userName.length <= 0 || userName == null) {
 					userName = prompt("what is your name?");	
 		} 
+		
 		if(userName.length > 0) {
 			socket.emit('got_new_user', {name: userName});	
 		}
