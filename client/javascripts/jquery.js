@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+
+    $( "#dialog" ).dialog();
+
+
 	//Chat
 	var elem = document.getElementById('chatlog');
 	var socket = io.connect();
@@ -51,7 +56,6 @@ $(document).ready(function() {
 	})
 
 	socket.on('show_messages', function (data) {
-		console.log(data)
 		$('#chatlog').append('<p><span>' + data[data.length-1].name + ':</span> ' + data[data.length-1].message + '</p>');
 		elem.scrollTop = elem.scrollHeight;
 	})

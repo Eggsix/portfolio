@@ -19,6 +19,10 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script src="/javascripts/jquery.js"></script>
 
+	<!-- Speech recognition -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.1.0/annyang.min.js"></script>
+	<script src="/javascripts/annyang.js"></script>
+
 	<!-- Materialize -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
@@ -58,6 +62,7 @@
 	        <li><a href="/preston_phan">About Me</a></li>
 	        <li><a href="/lab">Lab</a></li>
 	        <li><a href="/blog">Articles</a></li>
+	        <li id="chat_button" onclick="open_chat();"><a href="#">chat</a></li>
 	      </ul>
 	    </div>
 	</nav>
@@ -70,6 +75,13 @@
 		<form id="chat_form">
 			<input type="text" id="message" placeholder="Enter Message" name="message" autocomplete="off">
 		</form>	
+	</div>
+
+	<div id="dialog" title="Basic dialog">
+	  	<p>This page has voice recognition here are some available commands</p>
+	  	<li><p>Open chat</p></li>
+	  	<li><p>Close chat</p></li>
+	  	<li><p>Hello</p></li>
 	</div>
 </body>
 </html>
