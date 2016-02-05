@@ -8,6 +8,18 @@ if (annyang) {
 		},
 		'hello': function() {
 			alert('hello');
+		},
+		'home': function() {
+			$('#home').click();
+		},
+		'about': function() {
+			$('#about').click();
+		},
+		'lab': function() {
+			$('#lab').click();
+		},
+		'articles': function() {
+			$('#articles').click();
 		}
 	};
 	annyang.addCommands(commands);
