@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-
+	$('ul.tabs').tabs();
     $( "#dialog" ).dialog();
 
 
