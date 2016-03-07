@@ -9,6 +9,7 @@ if (annyang) {
 		'hello': function() {
 			alert('hello');
 		},
+		$('a')
 		'home': function() {
 			$('#home').click();
 		},
