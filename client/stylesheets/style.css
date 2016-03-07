@@ -135,6 +135,9 @@ Home
 	margin: 0 auto;
 	display: block;
 }
+	#prof_img {
+		background-color: black;
+	}
 	#home_display td {
 		text-align: center;
 		width: 600px;
@@ -147,6 +150,7 @@ Home
 	}
 #profile_img {
 	height: 100%;
+	border-radius: 50%;
 	margin-right: 0 auto;
 	display: block;
 }
